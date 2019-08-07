@@ -1,3 +1,8 @@
+/*
+Wichaivit Pattaramongkolchai
+6030300946
+7/8/2562
+*/
 import React from 'react';
 import { StyleSheet, Text, View,Button,TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native';
