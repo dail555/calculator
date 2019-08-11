@@ -48,10 +48,19 @@ export default class App extends React.Component {
       case '0':
         if(String(this.state.input).length>0){
           temp = this.state.input+'0'
+          if(String(this.state.input).indexOf('.')== -1){
+            temp = this.state.input+'0'
+            this.setState({output:Number(temp)})
+          }else{
+            this.setState({output:String(temp)})
+          }
+          this.setState({input:temp})
+        }
+        else if(this.state.operator == '' || this.state.operator == '+' || this.state.operator == '-' || this.state.operator == '*' || this.state.operator == '/'){
+          temp = this.state.input+'0'
           this.setState({input:temp})
           this.setState({output:Number(temp)})
         }
-        
         break
       
       case '1':
