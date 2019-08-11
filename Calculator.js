@@ -1,7 +1,8 @@
 /*
 Wichaivit Pattaramongkolchai
 6030300946
-7/8/2562
+create 7/8/2562
+update 11/8/2562
 */
 import React from 'react';
 import { StyleSheet, Text, View,Button,TouchableOpacity } from 'react-native';
@@ -31,21 +32,26 @@ export default class App extends React.Component {
         this.setState({output:0})
         break
       case '.':
-        if(this.state.input.length!=0){
-          if(this.state.input.indexOf('.')== -1){
+        if(String(this.state.input).length!=0){
+          if(String(this.state.input).indexOf('.')== -1){
             temp = this.state.input+'.'
+            this.setState({input:temp})
+            this.setState({output:temp})
           }
         }
         else{
           temp = '0'+'.'
+          this.setState({input:temp})
+          this.setState({output:temp})
         }
-        this.setState({input:temp})
-        this.setState({output:Number(temp)})
         break
       case '0':
-        temp = this.state.input+'0'
-        this.setState({input:temp})
-        this.setState({output:Number(temp)})
+        if(String(this.state.input).length>0){
+          temp = this.state.input+'0'
+          this.setState({input:temp})
+          this.setState({output:Number(temp)})
+        }
+        
         break
       
       case '1':
